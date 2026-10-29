@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CatWalk: the smallest deck</title>
+  <link rel="stylesheet" href="../catwalk.css">
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; background: #F4F1EA; }
+    main { max-width: 60rem; margin: 0 auto; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>The smallest deck</h1>
+  <p>Three slides. Click the slides, use the buttons, or focus the deck and press the arrow keys.</p>
+
+  <div class="cw-deck" data-cw-title="Hello, CatWalk">
+    <section class="cw-slide" data-cw-title="Welcome">
+      <p class="cw-kicker">A first deck</p>
+      <h2>Slides are plain HTML</h2>
+      <p class="cw-sub">Each section is one slide. CatWalk adds the controls.</p>
+    </section>
+
+    <section class="cw-slide" data-cw-title="Points that build">
+      <h2>Next reveals one point at a time</h2>
+      <ul>
+        <li class="cw-step">Give a list item the class cw-step</li>
+        <li class="cw-step">Each press of Next shows the next one</li>
+        <li class="cw-step">After the last, Next moves to the next slide</li>
+      </ul>
+    </section>
+
+    <section class="cw-slide" data-cw-title="The end">
+      <h2>That is all it takes</h2>
+      <p>Without JavaScript the same page shows every slide in order.</p>
+    </section>
+  </div>
+</main>
+<script src="../catwalk.js"></script>
+</body>
+</html>

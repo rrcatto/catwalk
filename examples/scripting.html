@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CatWalk: scripting and styling</title>
+  <link rel="stylesheet" href="../catwalk.css">
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; background: #F4F1EA; color: #1B1B1F; }
+    main { max-width: 60rem; margin: 0 auto; }
+    .controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 1rem; }
+    .controls button { min-height: 44px; padding: 0 1rem; font: inherit; cursor: pointer; }
+    #log { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 0.75rem; min-height: 6rem; max-height: 14rem; overflow-y: auto; font: 0.85rem/1.4 ui-monospace, monospace; white-space: pre-wrap; }
+
+    /* A deck restyled with the custom properties: the built-in dark theme, with its own accent and type. */
+    #night {
+      --cw-accent: #7FC8A9;
+      --cw-accent-2: #F28C6B;
+      --cw-font-display: Georgia, "Times New Roman", serif;
+      --cw-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Scripting and styling</h1>
+  <p>Two decks on one page. Each answers only its own keys: click into one and press the arrow keys. Everything they
+    report appears in the log below.</p>
+
+  <h2>A deck mounted automatically</h2>
+  <div class="cw-deck" data-cw-key="morning" data-cw-title="Morning routine">
+    <section class="cw-slide" data-cw-title="Start">
+      <h2>A calm morning in three steps</h2>
+    </section>
+    <section class="cw-slide" data-cw-title="The steps">
+      <h2>Do these in order</h2>
+      <ol class="cw-steps">
+        <li class="cw-step">Open the curtains</li>
+        <li class="cw-step">Drink a glass of water</li>
+        <li class="cw-step">Write the day's one important task</li>
+      </ol>
+    </section>
+    <section class="cw-slide" data-cw-title="A question">
+      <h2>Which comes first?</h2>
+      <ol class="cw-options" data-cw-answer="0">
+        <li>Open the curtains</li>
+        <li>Write the task</li>
+      </ol>
+      <details class="cw-explain"><summary>Show the answer</summary><p>Daylight first: it helps you wake up.</p></details>
+    </section>
+  </div>
+
+  <h2>A deck mounted by script</h2>
+  <p>This deck has <code>data-cw-manual</code>, so CatWalk leaves it alone until the script below mounts it, starting on
+    slide 2 and giving its buttons their addresses. The buttons under it drive it from outside.</p>
+  <div class="cw-deck" id="night" data-cw-manual data-cw-key="night" data-cw-title="An evening routine" data-cw-theme="dark">
+    <section class="cw-slide" data-cw-title="Start" data-cw-chapter="Evening">
+      <p class="cw-kicker">Part one</p>
+      <h2>Wind down before bed</h2>
+    </section>
+    <section class="cw-slide" data-cw-title="Two things">
+      <h2>Two things that help</h2>
+      <ul>
+        <li class="cw-step" data-cw-step="1">Dim the lights an hour before bed</li>
+        <li class="cw-step" data-cw-step="1">Put the phone in another room</li>
+        <li class="cw-step" data-cw-step="2">Both at once: these two appear together, then this one</li>
+      </ul>
+    </section>
+    <section class="cw-slide" data-cw-title="Finish" data-cw-chapter="Next steps" data-cw-tone="alt">
+      <h2>Ready for tomorrow?</h2>
+      <p>The buttons' addresses come from the script.</p>
+      <p class="cw-actions">
+        <a class="cw-action" data-cw-action="plan" href="#">Plan tomorrow</a>
+        <a class="cw-action" data-cw-action="help" href="#">Read the help</a>
+      </p>
+    </section>
+  </div>
+  <div class="controls">
+    <button type="button" id="first">Slide 1</button>
+    <button type="button" id="back">Previous</button>
+    <button type="button" id="forward">Next</button>
+    <button type="button" id="remove">Remove the player</button>
+  </div>
+
+  <h2>What the decks report</h2>
+  <div id="log" aria-live="polite"></div>
+</main>
+<script src="../catwalk.js"></script>
+<script>
+  var log = document.getElementById('log');
+  function write(line) { log.textContent += line + '\n'; log.scrollTop = log.scrollHeight; }
+
+  // Every event bubbles, so one listener on the document hears every deck.
+  ['cw:ready', 'cw:slide', 'cw:check', 'cw:action', 'cw:complete'].forEach(function (name) {
+    document.addEventListener(name, function (event) { write(name + ' ' + JSON.stringify(event.detail)); });
+  });
+
+  // Mount the manual deck: start on slide 2, and give its action buttons their addresses.
+  var night = Catwalk.mount(document.getElementById('night'), {
+    startAt: 2,
+    links: {plan: '#first', help: 'https://github.com/rrcatto/catwalk#readme'}
+  });
+
+  document.getElementById('first').addEventListener('click', function () { night.go(1); });
+  document.getElementById('back').addEventListener('click', function () { night.prev(); });
+  document.getElementById('forward').addEventListener('click', function () { night.next(); });
+  document.getElementById('remove').addEventListener('click', function () {
+    night.destroy();
+    document.querySelectorAll('.controls button').forEach(function (b) { b.disabled = true; });
+    write('destroyed: the deck is a plain page again');
+  });
+
+  write('CatWalk ' + Catwalk.version);
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CatWalk: every layout</title>
+  <link rel="stylesheet" href="../catwalk.css">
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; background: #F4F1EA; color: #1B1B1F; }
+    main { max-width: 60rem; margin: 0 auto; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Every layout</h1>
+  <p>One deck about the water cycle, with one slide of each layout CatWalk styles. The deck's chapters show as gaps in
+    the progress bar and as headings in Contents. Each slide's narration script is its transcript.</p>
+
+  <div class="cw-deck" data-cw-key="water-cycle" data-cw-title="The water cycle" data-cw-host-links='{"continue": "#after-the-deck"}' lang="en">
+
+    <section class="cw-slide" data-cw-layout="title" data-cw-title="Welcome" data-cw-chapter="Introduction">
+      <p class="cw-kicker">Earth science</p>
+      <h2>Where does rain come from?</h2>
+      <p class="cw-sub">The same water has been going round for billions of years.</p>
+      <aside class="cw-notes">Every drop of rain has fallen before. In the next few minutes we follow one drop all the way round.</aside>
+    </section>
+
+    <section class="cw-slide" data-cw-layout="statement" data-cw-title="The big idea" data-cw-tone="alt">
+      <p class="cw-big">Water is never used up. It only moves and changes form.</p>
+      <p class="cw-source">The idea at the heart of the water cycle</p>
+      <aside class="cw-notes">Keep this one idea in mind: nothing is lost, it only moves.</aside>
+    </section>
+
+    <section class="cw-slide" data-cw-layout="points" data-cw-title="Four stages" data-cw-chapter="The cycle">
+      <h2>The cycle has four stages</h2>
+      <ol>
+        <li class="cw-step">Evaporation: the sun warms water into vapour</li>
+        <li class="cw-step">Condensation: the vapour cools into cloud droplets</li>
+        <li class="cw-step">Precipitation: the droplets fall as rain, hail or snow</li>
+        <li class="cw-step">Collection: the water gathers in seas, lakes and the ground</li>
+      </ol>
+      <aside class="cw-notes">Press Next to reveal each stage in turn.</aside>
+    </section>
+
+    <section class="cw-slide" data-cw-layout="compare" data-cw-title="Vapour or cloud">
+      <h2>Vapour and cloud are not the same</h2>
+      <div class="cw-cols">
+        <div class="cw-col">
+          <h3>Water vapour</h3>
+          <ul>
+            <li>A gas</li>
+            <li>Invisible</li>
+            <li>Always in the air around us</li>
+          </ul>
+        </div>
+        <div class="cw-col">
+          <h3>A cloud</h3>
+          <p>Tiny drops of liquid water or ice crystals, floating because they are so small. That is why you can see it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cw-slide" id="slide-picture" data-cw-layout="picture" data-cw-title="The cycle drawn">
+      <h2>The whole cycle in one picture</h2>
+      <figure class="cw-figure">
+        <div class="cw-svg" role="img" aria-label="The sun warms the sea, vapour rises into a cloud, rain falls on a hill and runs back to the sea.">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300">
+            <rect width="640" height="300" fill="#DCEBF5"/>
+            <circle cx="90" cy="70" r="38" fill="#F2B632"/>
+            <path d="M0 240 Q160 220 320 240 L320 300 L0 300 Z" fill="#2E6FA3"/>
+            <path d="M300 300 L430 170 L560 300 Z" fill="#6E8B4E"/>
+            <g fill="#FFFFFF"><circle cx="400" cy="80" r="30"/><circle cx="440" cy="70" r="38"/><circle cx="485" cy="82" r="28"/></g>
+            <g stroke="#2E6FA3" stroke-width="3" stroke-linecap="round"><path d="M420 130 L410 150"/><path d="M445 130 L435 150"/><path d="M470 130 L460 150"/></g>
+            <g fill="none" stroke="#B4632A" stroke-width="3" stroke-dasharray="6 6"><path d="M160 225 Q250 150 370 95"/><path d="M480 250 Q400 280 330 250"/></g>
+            <g font-family="sans-serif" font-size="16" fill="#1B1B1F"><text x="170" y="180">evaporation</text><text x="430" y="40">condensation</text><text x="495" y="145">rain</text><text x="350" y="285">runs back</text></g>
+          </svg>
+        </div>
+        <figcaption>The sun lifts water from the sea, and gravity brings it back.</figcaption>
+      </figure>
+    </section>
+
+    <section class="cw-slide" data-cw-layout="number" data-cw-title="A striking figure" data-cw-chapter="Some numbers">
+      <p class="cw-big">97%</p>
+      <p class="cw-label">of the Earth's water is salty sea water. Most of the fresh water is frozen in ice caps and glaciers.</p>
+      <p class="cw-source">Approximate share of all water on Earth</p>
+    </section>
+
+    <section class="cw-slide" data-cw-layout="timeline" data-cw-title="A drop's journey">
+      <h2>One drop's journey</h2>
+      <ol class="cw-timeline">
+        <li class="cw-step"><b class="cw-when">Morning</b> Sun warms the sea and the drop evaporates</li>
+        <li class="cw-step"><b class="cw-when">Afternoon</b> It rises, cools and joins a cloud</li>
+        <li class="cw-step"><b class="cw-when">Evening</b> It falls as rain on a hillside</li>
+        <li class="cw-step"><b class="cw-when">Weeks later</b> A river carries it back to the sea</li>
+      </ol>
+    </section>
+
+    <section class="cw-slide" data-cw-layout="steps" data-cw-title="Try it at home">
+      <h2>Make a cloud in a jar</h2>
+      <ol class="cw-steps">
+        <li class="cw-step">Pour a little hot water into a glass jar</li>
+        <li class="cw-step">Put a plate of ice on top of the jar</li>
+        <li class="cw-step">Watch the warm, damp air cool under the ice</li>
+        <li class="cw-step">See droplets form a small cloud inside</li>
+      </ol>
+    </section>
+
+    <section class="cw-slide" data-cw-layout="case" data-cw-title="A puzzle" data-cw-chapter="Check yourself">
+      <h2>The cold glass</h2>
+      <div class="cw-facts"><p>On a hot day you take a glass of iced water outside. Within minutes the outside of the glass is wet, though none spilled.</p></div>
+      <p class="cw-question">Where did the water on the glass come from?</p>
+      <div class="cw-outcome cw-step"><p>From the air. The cold glass cooled the vapour around it until it condensed, the same step that makes clouds.</p></div>
+      <aside class="cw-notes">Think about it before you press Next. The answer appears on this slide.</aside>
+    </section>
+
+    <section class="cw-slide" data-cw-layout="check" data-cw-title="A quick question">
+      <h2>Which stage turns vapour into cloud droplets?</h2>
+      <ol class="cw-options" data-cw-answer="1">
+        <li>Evaporation</li>
+        <li>Condensation</li>
+        <li>Precipitation</li>
+      </ol>
+      <details class="cw-explain">
+        <summary>Show the answer</summary>
+        <p>Condensation. As vapour rises it cools, and cooler air holds less vapour, so it condenses into droplets.</p>
+      </details>
+    </section>
+
+    <section class="cw-slide" data-cw-layout="cta" data-cw-title="Go further" data-cw-tone="accent">
+      <h2>Want to see it again?</h2>
+      <p>Jump back to the picture of the whole cycle, or carry on reading below.</p>
+      <p class="cw-actions">
+        <a class="cw-action" data-cw-action="goto" data-cw-target="slide-picture" href="#slide-picture">See the picture again</a>
+      </p>
+    </section>
+
+    <section class="cw-slide" data-cw-layout="next" data-cw-title="Up next">
+      <h2>Now read on</h2>
+      <p>Below the deck, the next part of the page explains why some places get more rain than others.</p>
+      <a class="cw-action" data-cw-action="continue" href="#">Carry on reading</a>
+    </section>
+  </div>
+
+  <h2 id="after-the-deck">After the deck</h2>
+  <p>The last slide's button leads here: its address comes from the deck's <code>data-cw-host-links</code>.</p>
+</main>
+<script src="../catwalk.js"></script>
+</body>
+</html>
