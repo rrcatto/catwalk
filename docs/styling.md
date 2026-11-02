@@ -11,7 +11,7 @@ deck, or for a group of decks, in your own stylesheet loaded after `catwalk.css`
 | `--cw-bg-alt` | `#F2ECE0` | `#121826` | `data-cw-tone="alt"` slides, the transcript, highlighted contents |
 | `--cw-ink` | `#1B1B1F` | `#EFE7D6` | Text |
 | `--cw-muted` | `#5C5A55` | `#A9A39A` | Secondary text: sub lines, sources, captions |
-| `--cw-accent` | `#8A6A1F` | `#C9A04A` | Kickers, buttons, markers, the progress already seen |
+| `--cw-accent` | `#82641D` | `#C9A04A` | Kickers, buttons, markers, the progress already seen |
 | `--cw-accent-2` | `#9A2F42` | `#E0788A` | The current slide in the progress bar, a wrong answer |
 | `--cw-good` | `#2E7A4A` | `#6CC08A` | A right answer |
 | `--cw-bar` | `#EFE8DA` | `#151B28` | The top and bottom bars |

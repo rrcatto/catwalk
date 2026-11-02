@@ -39,7 +39,7 @@ The slides must be direct children of the deck. A deck with no slides is left as
 | `class="cw-slide"` | Required, on a `section`. |
 | `data-cw-title` | The slide's short name, used in Contents and announced to screen readers. |
 | `data-cw-chapter` | Starts a chapter at this slide. Its name shows in the top bar until the next chapter, as a heading in Contents, and as a gap in the progress bar. |
-| `data-cw-tone` | `alt` for the second background colour, `accent` for the accent colour. |
+| `data-cw-tone` | `alt` for the second background colour, `accent` for the accent colour. On `accent` the deck's colours swap, so every layout stays readable, and a box on it (a case's outcome, a question's options) keeps the deck's own page and ink. |
 | `data-cw-layout` | The slide's layout, such as `points` or `picture`. A hook for styling: see [layouts](#layouts). |
 | `data-cw-audio` | The address of the slide's narration recording. See [narration](#narration). |
 | `id` | Lets an action button jump to this slide. See [action buttons](#action-buttons). |

@@ -45,7 +45,7 @@ Starts every deck inside `container` (the whole document if left out) that is no
 
 ## `Catwalk.version`
 
-The version of CatWalk, such as `"1.0.0"`.
+The version of CatWalk, such as `"1.0.1"`.
 
 ## A deck's handle
 

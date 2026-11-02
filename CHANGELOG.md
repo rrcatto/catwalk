@@ -2,6 +2,26 @@
 
 All notable changes to CatWalk are listed here. Versions follow [Semantic Versioning](https://semver.org).
 
+## 1.0.1 - 2026-11-02
+
+Every word on every slide can be read.
+
+### Fixed
+
+- Text that could not be read on a `data-cw-tone="accent"` slide: a case's outcome was near-white on near-white, and a
+  timeline's dates, a title's sub-heading, a caption, a step's circle and a list's markers took colours that vanish on the
+  accent. On the accent background the deck's colours now swap, so every layout stays readable.
+- The light look's accent is `#82641D`, dark enough for small text on `--cw-bg-alt` and `--cw-bar` as well as `--cw-bg`.
+- A heading in a column (`h3`) and the contents list's heading take the deck's colour, never the host page's.
+- A step or an answer revealed below the frame of a full slide stayed out of sight. It is now brought into view.
+
+### Player
+
+- A slide fuller than its frame shrinks a little to fit (`--cw-fit`, down to 72%) before it scrolls, again whenever the
+  frame changes size.
+- A picture slide has a narrower margin, so that words in a drawing are drawn larger. A picture with no heading or caption
+  fills its slide, on black in the dark look.
+
 ## 1.0.0 - 2026-10-29
 
 The first version.
